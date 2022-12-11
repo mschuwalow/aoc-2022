@@ -1,0 +1,29 @@
+name: aoc2022
+version: 0.1.0
+license: Apache-2.0
+license-file: LICENSE
+author: Maxim Schuwalow
+maintainer: Maxim Schuwalow <maxim.schuwalow@gmail.com>
+bug-reports: mailto:maxim.schuwalow@gmail.com
+stability: stable
+homepage: http://github.com/mschuwalow/aoc-2022/
+synopsis: Advent of Code 2022
+cabal-version: >= 1.8
+build-type: Simple
+program-options:
+  default-language: Haskell2010
+  ghc-options:
+    -Werror
+    -Wall
+    -Wcompat
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -Wredundant-constraints
+    -Wno-type-defaults
+    -Wno-name-shadowing
+
+executable day1
+  hs-source-dirs: solutions/day1
+  main-is: hello.hs
+  build-depends:
+    base >= 4.2 && < 5
