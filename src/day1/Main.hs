@@ -1,13 +1,7 @@
 module Main (main) where
-import Data.List (sortBy)
 
-splitLines :: String -> [String]
-splitLines text = go text [] []
-  where
-    go [] current acc = reverse (current : acc)
-    go (x : xs) current acc
-      | x == '\n' = go xs [] (reverse current : acc)
-      | otherwise = go xs (x : current) acc
+import Data.List (sortBy)
+import Aoc.Utils (splitLines)
 
 groupByEmptyLines :: [String] -> [[String]]
 groupByEmptyLines [] = []
@@ -22,4 +16,5 @@ sumGroups = fmap (sum . fmap read)
 main = do
   input <- readFile "./data/day1/real.txt"
   let sumPerElf = sumGroups . groupByEmptyLines . splitLines $ input
-  print . sum . take 3 . sortBy (flip compare) $ sumPerElf
+  let result = sum . take 3 . sortBy (flip compare) $ sumPerElf
+  print result
