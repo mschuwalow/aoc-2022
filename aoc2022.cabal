@@ -31,3 +31,10 @@ executable day2
     base >= 4.2 && < 5,
     aoc-lib
 
+executable day3
+  hs-source-dirs: src/day3
+  main-is: Main.hs
+  build-depends:
+    base >= 4.2 && < 5,
+    aoc-lib
+
